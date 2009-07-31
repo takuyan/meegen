@@ -1,0 +1,579 @@
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Rails::InfoController#properties (for 192.168.11.3 at 2009-07-31 20:15:08) [GET]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+Completed in 110ms (View: 0, DB: 0) | 200 OK [http://beast/rails/info/properties]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (110.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (203.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateMeegens (20090731111701)
+  [4;35;1mSQL (78.0ms)[0m   [0mCREATE TABLE `meegens` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (31.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090731111701')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `meegens`[0m
+  [4;35;1mSQL (15.0ms)[0m   [0mdescribe `meegens`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `meegens`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 192.168.11.3 at 2009-07-31 20:17:25) [GET]
+
+ActionController::RoutingError (No route matches "/meegen" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MeegensController#index (for 192.168.11.3 at 2009-07-31 20:17:34) [GET]
+  [4;35;1mMeegen Load (0.0ms)[0m   [0mSELECT * FROM `meegens` [0m
+Rendering template within layouts/meegens
+Rendering meegens/index
+Completed in 1234ms (View: 1219, DB: 0) | 200 OK [http://beast/meegens]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateMeegens (20090731111701)
+Migrating to CreateKeywords (20090731111849)
+  [4;36;1mSQL (78.0ms)[0m   [0;1mCREATE TABLE `keywords` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (32.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090731111849')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `keywords`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `keywords`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `keywords`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `meegens`[0m
+  [4;35;1mSQL (16.0ms)[0m   [0mdescribe `meegens`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `meegens`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateMeegens (20090731111701)
+Migrating to CreateKeywords (20090731111849)
+Migrating to ActsAsTaggableMigration (20090731112119)
+  [4;36;1mSQL (79.0ms)[0m   [0;1mCREATE TABLE `tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (62.0ms)[0m   [0mCREATE TABLE `taggings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag_id` int(11), `taggable_id` int(11), `taggable_type` varchar(255), `created_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (188.0ms)[0m   [0;1mCREATE INDEX `index_taggings_on_tag_id` ON `taggings` (`tag_id`)[0m
+  [4;35;1mSQL (156.0ms)[0m   [0mCREATE INDEX `index_taggings_on_taggable_id_and_taggable_type` ON `taggings` (`taggable_id`, `taggable_type`)[0m
+  [4;36;1mSQL (31.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090731112119')[0m
+  [4;35;1mSQL (15.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `keywords`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `keywords`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `keywords`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `meegens`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `meegens`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `meegens`[0m
+  [4;36;1mSQL (16.0ms)[0m   [0;1mSHOW FIELDS FROM `taggings`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `taggings`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `taggings`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `tags`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `tags`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `tags`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing KeywordsController#index (for 192.168.11.3 at 2009-07-31 20:24:23) [GET]
+  [4;36;1mKeyword Load (0.0ms)[0m   [0;1mSELECT * FROM `keywords` [0m
+Rendering template within layouts/keywords
+Rendering keywords/index
+Completed in 31ms (View: 16, DB: 0) | 200 OK [http://beast/keywords]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing KeywordsController#new (for 192.168.11.3 at 2009-07-31 20:24:26) [GET]
+  [4;35;1mKeyword Columns (15.0ms)[0m   [0mSHOW FIELDS FROM `keywords`[0m
+Rendering template within layouts/keywords
+Rendering keywords/new
+Completed in 15ms (View: 0, DB: 15) | 200 OK [http://beast/keywords/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing KeywordsController#create (for 192.168.11.3 at 2009-07-31 20:24:32) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"Vvi+dn3wo46dcX8Ck+zZv05xhd/NRjPU9Q0guwq3vFo=", "keyword"=>{"name"=>"科学"}}
+  [4;36;1mKeyword Columns (15.0ms)[0m   [0;1mSHOW FIELDS FROM `keywords`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mKeyword Create (0.0ms)[0m   [0;1mINSERT INTO `keywords` (`name`, `updated_at`, `created_at`) VALUES('科学', '2009-07-31 11:24:32', '2009-07-31 11:24:32')[0m
+  [4;35;1mSQL (47.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://beast:3000/keywords/1
+Completed in 219ms (DB: 62) | 302 Found [http://beast/keywords]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing KeywordsController#show (for 192.168.11.3 at 2009-07-31 20:24:32) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mKeyword Columns (15.0ms)[0m   [0;1mSHOW FIELDS FROM `keywords`[0m
+  [4;35;1mKeyword Load (0.0ms)[0m   [0mSELECT * FROM `keywords` WHERE (`keywords`.`id` = 1) [0m
+Rendering template within layouts/keywords
+Rendering keywords/show
+Completed in 15ms (View: 0, DB: 15) | 200 OK [http://beast/keywords/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing KeywordsController#index (for 192.168.11.3 at 2009-07-31 20:24:34) [GET]
+  [4;36;1mKeyword Load (0.0ms)[0m   [0;1mSELECT * FROM `keywords` [0m
+Rendering template within layouts/keywords
+Rendering keywords/index
+  [4;35;1mKeyword Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `keywords`[0m
+Completed in 16ms (View: 0, DB: 0) | 200 OK [http://beast/keywords]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MeegensController#index (for 192.168.11.3 at 2009-07-31 20:26:14) [GET]
+  [4;36;1mSQL (16.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mMeegen Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `meegens`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mMeegen Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `meegens`[0m
+
+NameError (undefined local variable or method `acts_as_taggable' for #<Class:0x45e0f48>):
+  app/models/meegen.rb:2
+  app/controllers/meegens_controller.rb:5:in `index'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (110.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MeegensController#index (for 192.168.11.3 at 2009-07-31 20:26:36) [GET]
+
+RuntimeError (acts_as_taggable_on_steroids has been moved to github: http://github.com/jviney/acts_as_taggable_on_steroids):
+  app/models/meegen.rb:2
+  app/controllers/meegens_controller.rb:5:in `index'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (47.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MeegensController#index (for 192.168.11.3 at 2009-07-31 20:30:39) [GET]
+  [4;36;1mMeegen Load (0.0ms)[0m   [0;1mSELECT * FROM `meegens` [0m
+Rendering template within layouts/meegens
+Rendering meegens/index
+Completed in 157ms (View: 16, DB: 0) | 200 OK [http://beast/meegens]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MeegensController#new (for 192.168.11.3 at 2009-07-31 20:30:41) [GET]
+  [4;35;1mMeegen Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `meegens`[0m
+Rendering template within layouts/meegens
+Rendering meegens/new
+Completed in 31ms (View: 16, DB: 0) | 200 OK [http://beast/meegens/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MeegensController#create (for 192.168.11.3 at 2009-07-31 20:31:22) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"Vvi+dn3wo46dcX8Ck+zZv05xhd/NRjPU9Q0guwq3vFo=", "meegen"=>{"name"=>"希望さえあればどんな所にでも たどりつけると決心している。"}}
+  [4;36;1mMeegen Columns (16.0ms)[0m   [0;1mSHOW FIELDS FROM `meegens`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMeegen Create (0.0ms)[0m   [0;1mINSERT INTO `meegens` (`name`, `updated_at`, `created_at`) VALUES('希望さえあればどんな所にでも たどりつけると決心している。', '2009-07-31 11:31:22', '2009-07-31 11:31:22')[0m
+  [4;35;1mSQL (16.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://beast:3000/meegens/1
+Completed in 79ms (DB: 32) | 302 Found [http://beast/meegens]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MeegensController#show (for 192.168.11.3 at 2009-07-31 20:31:22) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMeegen Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `meegens`[0m
+  [4;35;1mMeegen Load (0.0ms)[0m   [0mSELECT * FROM `meegens` WHERE (`meegens`.`id` = 1) [0m
+Rendering template within layouts/meegens
+Rendering meegens/show
+Completed in 16ms (View: 0, DB: 0) | 200 OK [http://beast/meegens/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MeegensController#index (for 192.168.11.3 at 2009-07-31 20:31:41) [GET]
+  [4;36;1mMeegen Load (0.0ms)[0m   [0;1mSELECT * FROM `meegens` [0m
+Rendering template within layouts/meegens
+Rendering meegens/index
+  [4;35;1mMeegen Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `meegens`[0m
+Completed in 16ms (View: 0, DB: 0) | 200 OK [http://beast/meegens]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MeegensController#new (for 192.168.11.3 at 2009-07-31 20:31:43) [GET]
+  [4;36;1mMeegen Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `meegens`[0m
+Rendering template within layouts/meegens
+Rendering meegens/new
+Completed in 31ms (View: 16, DB: 0) | 200 OK [http://beast/meegens/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MeegensController#create (for 192.168.11.3 at 2009-07-31 20:31:51) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"Vvi+dn3wo46dcX8Ck+zZv05xhd/NRjPU9Q0guwq3vFo=", "meegen"=>{"name"=>"太陽が輝くかぎり、希望もまた輝く。"}}
+  [4;35;1mMeegen Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `meegens`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMeegen Create (0.0ms)[0m   [0mINSERT INTO `meegens` (`name`, `updated_at`, `created_at`) VALUES('太陽が輝くかぎり、希望もまた輝く。', '2009-07-31 11:31:51', '2009-07-31 11:31:51')[0m
+  [4;36;1mSQL (31.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://beast:3000/meegens/2
+Completed in 47ms (DB: 31) | 302 Found [http://beast/meegens]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MeegensController#show (for 192.168.11.3 at 2009-07-31 20:31:51) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMeegen Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `meegens`[0m
+  [4;36;1mMeegen Load (0.0ms)[0m   [0;1mSELECT * FROM `meegens` WHERE (`meegens`.`id` = 2) [0m
+Rendering template within layouts/meegens
+Rendering meegens/show
+Completed in 31ms (View: 16, DB: 0) | 200 OK [http://beast/meegens/2]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MeegensController#show (for 192.168.11.3 at 2009-07-31 20:33:02) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMeegen Columns (16.0ms)[0m   [0mSHOW FIELDS FROM `meegens`[0m
+  [4;36;1mMeegen Load (0.0ms)[0m   [0;1mSELECT * FROM `meegens` WHERE (`meegens`.`id` = 2) [0m
+Rendering template within layouts/meegens
+Rendering meegens/show
+Completed in 78ms (View: 31, DB: 16) | 200 OK [http://beast/meegens/2]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MeegensController#index (for 192.168.11.3 at 2009-07-31 20:33:04) [GET]
+  [4;35;1mMeegen Load (0.0ms)[0m   [0mSELECT * FROM `meegens` [0m
+Rendering template within layouts/meegens
+Rendering meegens/index
+  [4;36;1mMeegen Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `meegens`[0m
+Completed in 31ms (View: 16, DB: 0) | 200 OK [http://beast/meegens]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MeegensController#new (for 192.168.11.3 at 2009-07-31 20:33:07) [GET]
+  [4;35;1mMeegen Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `meegens`[0m
+Rendering template within layouts/meegens
+Rendering meegens/new
+
+ActionView::TemplateError (wrong number of arguments (1 for 2)) on line #11 of app/views/meegens/new.html.erb:
+8:     <%= f.text_area :name %>
+9:   </p>
+10:   <p>
+11:     <%= label :keyword_name %><br />
+12:     <%= text_field :keyword_name %>
+13:   </p>
+14:   <p>
+
+    app/views/meegens/new.html.erb:11:in `label'
+    app/views/meegens/new.html.erb:11
+    app/views/meegens/new.html.erb:3
+    app/controllers/meegens_controller.rb:29:in `new'
+    C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (62.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MeegensController#new (for 192.168.11.3 at 2009-07-31 20:33:23) [GET]
+  [4;36;1mMeegen Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `meegens`[0m
+Rendering template within layouts/meegens
+Rendering meegens/new
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://beast/meegens/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mKeyword Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `keywords`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mMeegen Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `meegens`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MeegensController#create (for 192.168.11.3 at 2009-07-31 20:39:07) [POST]
+  Parameters: {"keyword_name"=>"希望", "commit"=>"Create", "authenticity_token"=>"Vvi+dn3wo46dcX8Ck+zZv05xhd/NRjPU9Q0guwq3vFo=", "meegen"=>{"name"=>"希望はいいものだよ。多分最高のものだ。いいものは決して滅びない。"}}
+  [4;35;1mMeegen Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `meegens`[0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.[]):
+  app/controllers/meegens_controller.rb:49:in `create'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (46.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MeegensController#create (for 192.168.11.3 at 2009-07-31 20:39:35) [POST]
+  Parameters: {"keyword_name"=>"希望", "commit"=>"Create", "authenticity_token"=>"Vvi+dn3wo46dcX8Ck+zZv05xhd/NRjPU9Q0guwq3vFo=", "meegen"=>{"name"=>"希望はいいものだよ。多分最高のものだ。いいものは決して滅びない。"}}
+  [4;36;1mMeegen Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `meegens`[0m
+  [4;35;1mKeyword Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `keywords`[0m
+  [4;36;1mKeyword Load (0.0ms)[0m   [0;1mSELECT * FROM `keywords` WHERE (`keywords`.`name` = '希望') LIMIT 1[0m
+  [4;35;1mTagging Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `taggings`[0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.name):
+  app/controllers/meegens_controller.rb:51:in `create'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (46.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MeegensController#index (for 192.168.11.3 at 2009-07-31 20:42:05) [GET]
+  [4;36;1mMeegen Load (0.0ms)[0m   [0;1mSELECT * FROM `meegens` [0m
+Rendering template within layouts/meegens
+Rendering meegens/index
+  [4;35;1mMeegen Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `meegens`[0m
+Completed in 15ms (View: 0, DB: 0) | 200 OK [http://beast/meegens]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MeegensController#new (for 192.168.11.3 at 2009-07-31 20:42:07) [GET]
+  [4;36;1mMeegen Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `meegens`[0m
+Rendering template within layouts/meegens
+Rendering meegens/new
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://beast/meegens/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MeegensController#create (for 192.168.11.3 at 2009-07-31 20:42:14) [POST]
+  Parameters: {"keyword_name"=>"希望", "commit"=>"Create", "authenticity_token"=>"Vvi+dn3wo46dcX8Ck+zZv05xhd/NRjPU9Q0guwq3vFo=", "meegen"=>{"name"=>"希望はいいものだよ。多分最高のものだ。いいものは決して滅びない。"}}
+  [4;35;1mMeegen Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `meegens`[0m
+  [4;36;1mKeyword Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `keywords`[0m
+  [4;35;1mKeyword Load (16.0ms)[0m   [0mSELECT * FROM `keywords` WHERE (`keywords`.`name` = '希望') [0m
+
+NoMethodError (undefined method `stringify_keys!' for "希望":String):
+  app/controllers/meegens_controller.rb:49:in `new'
+  app/controllers/meegens_controller.rb:49:in `create'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (47.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MeegensController#create (for 192.168.11.3 at 2009-07-31 20:43:51) [POST]
+  Parameters: {"keyword_name"=>"希望", "commit"=>"Create", "authenticity_token"=>"Vvi+dn3wo46dcX8Ck+zZv05xhd/NRjPU9Q0guwq3vFo=", "meegen"=>{"name"=>"希望はいいものだよ。多分最高のものだ。いいものは決して滅びない。"}}
+  [4;36;1mMeegen Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `meegens`[0m
+  [4;35;1mKeyword Columns (16.0ms)[0m   [0mSHOW FIELDS FROM `keywords`[0m
+  [4;36;1mKeyword Load (0.0ms)[0m   [0;1mSELECT * FROM `keywords` WHERE (`keywords`.`name` = '希望') [0m
+
+NoMethodError (undefined method `stringify_keys!' for "希望":String):
+  app/controllers/meegens_controller.rb:49:in `new'
+  app/controllers/meegens_controller.rb:49:in `create'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (110.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MeegensController#new (for 192.168.11.3 at 2009-07-31 20:43:54) [GET]
+  [4;35;1mMeegen Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `meegens`[0m
+Rendering template within layouts/meegens
+Rendering meegens/new
+Completed in 16ms (View: 0, DB: 0) | 200 OK [http://beast/meegens/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MeegensController#create (for 192.168.11.3 at 2009-07-31 20:43:55) [POST]
+  Parameters: {"keyword_name"=>"希望", "commit"=>"Create", "authenticity_token"=>"Vvi+dn3wo46dcX8Ck+zZv05xhd/NRjPU9Q0guwq3vFo=", "meegen"=>{"name"=>"希望はいいものだよ。多分最高のものだ。いいものは決して滅びない。"}}
+  [4;36;1mMeegen Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `meegens`[0m
+  [4;35;1mKeyword Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `keywords`[0m
+  [4;36;1mKeyword Load (15.0ms)[0m   [0;1mSELECT * FROM `keywords` WHERE (`keywords`.`name` = '希望') [0m
+
+NoMethodError (undefined method `stringify_keys!' for "希望":String):
+  app/controllers/meegens_controller.rb:49:in `new'
+  app/controllers/meegens_controller.rb:49:in `create'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (47.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MeegensController#create (for 192.168.11.3 at 2009-07-31 20:44:54) [POST]
+  Parameters: {"keyword_name"=>"希望", "commit"=>"Create", "authenticity_token"=>"Vvi+dn3wo46dcX8Ck+zZv05xhd/NRjPU9Q0guwq3vFo=", "meegen"=>{"name"=>"希望はいいものだよ。多分最高のものだ。いいものは決して滅びない。"}}
+  [4;35;1mMeegen Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `meegens`[0m
+  [4;36;1mKeyword Columns (16.0ms)[0m   [0;1mSHOW FIELDS FROM `keywords`[0m
+  [4;35;1mKeyword Load (0.0ms)[0m   [0mSELECT * FROM `keywords` WHERE (`keywords`.`name` = '希望') [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mKeyword Create (0.0ms)[0m   [0mINSERT INTO `keywords` (`name`, `updated_at`, `created_at`) VALUES('希望', '2009-07-31 11:44:54', '2009-07-31 11:44:54')[0m
+  [4;36;1mSQL (46.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMeegen Create (0.0ms)[0m   [0;1mINSERT INTO `meegens` (`name`, `updated_at`, `created_at`) VALUES('希望はいいものだよ。多分最高のものだ。いいものは決して滅びない。', '2009-07-31 11:44:54', '2009-07-31 11:44:54')[0m
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT * FROM `tags` WHERE (name LIKE '希望') LIMIT 1[0m
+  [4;36;1mTag Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `tags`[0m
+  [4;35;1mTag Exists (0.0ms)[0m   [0mSELECT `tags`.id FROM `tags` WHERE (`tags`.`name` = BINARY '希望') LIMIT 1[0m
+  [4;36;1mTag Create (0.0ms)[0m   [0;1mINSERT INTO `tags` (`name`) VALUES('希望')[0m
+  [4;35;1mTagging Create (0.0ms)[0m   [0mINSERT INTO `taggings` (`tag_id`, `taggable_type`, `taggable_id`, `created_at`) VALUES(1, 'Meegen', 3, '2009-07-31 11:44:54')[0m
+  [4;36;1mSQL (47.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://beast:3000/meegens/3
+Completed in 141ms (DB: 109) | 302 Found [http://beast/meegens]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MeegensController#show (for 192.168.11.3 at 2009-07-31 20:44:54) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mMeegen Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `meegens`[0m
+  [4;36;1mMeegen Load (0.0ms)[0m   [0;1mSELECT * FROM `meegens` WHERE (`meegens`.`id` = 3) [0m
+Rendering template within layouts/meegens
+Rendering meegens/show
+Completed in 16ms (View: 0, DB: 0) | 200 OK [http://beast/meegens/3]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MeegensController#index (for 192.168.11.3 at 2009-07-31 20:44:56) [GET]
+  [4;35;1mMeegen Load (0.0ms)[0m   [0mSELECT * FROM `meegens` [0m
+Rendering template within layouts/meegens
+Rendering meegens/index
+  [4;36;1mMeegen Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `meegens`[0m
+Completed in 47ms (View: 15, DB: 0) | 200 OK [http://beast/meegens]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing KeywordsController#index (for 192.168.11.3 at 2009-07-31 20:45:03) [GET]
+  [4;35;1mKeyword Load (0.0ms)[0m   [0mSELECT * FROM `keywords` [0m
+Rendering template within layouts/keywords
+Rendering keywords/index
+  [4;36;1mKeyword Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `keywords`[0m
+Completed in 31ms (View: 16, DB: 0) | 200 OK [http://beast/keywords]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MeegensController#index (for 192.168.11.3 at 2009-07-31 20:46:30) [GET]
+  [4;35;1mMeegen Load (0.0ms)[0m   [0mSELECT * FROM `meegens` [0m
+Rendering template within layouts/meegens
+Rendering meegens/index
+  [4;36;1mMeegen Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `meegens`[0m
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://beast/meegens]
