@@ -1,0 +1,18 @@
+<p>
+  <b>Name:</b>
+  <%=h @comment.name %>
+</p>
+
+<p>
+  <b>Meegen:</b>
+  <%=h @comment.meegen_id %>
+</p>
+
+<p>
+  <b>User name:</b>
+  <%=h @comment.user_name %>
+</p>
+
+
+<%= link_to 'Edit', edit_comment_path(@comment) %> |
+<%= link_to 'Back', comments_path %>

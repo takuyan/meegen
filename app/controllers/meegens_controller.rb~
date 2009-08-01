@@ -1,4 +1,7 @@
 class MeegensController < ApplicationController
+
+  layout :application
+
   # GET /meegens
   # GET /meegens.xml
   def index
