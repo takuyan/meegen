@@ -10,3 +10,23 @@
 
 <%= link_to 'Edit', edit_meegen_path(@meegen) %> |
 <%= link_to 'Back', meegens_path %>
+
+<% @comment = Comment.new -%>
+<% form_for(@comment) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+    <%= f.hidden_field :meegen_id, :value => @meegen.id %>
+  <p>
+    <%= f.label :user_name %><br />
+    <%= f.text_field :user_name %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+

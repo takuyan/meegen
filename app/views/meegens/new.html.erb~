@@ -8,8 +8,8 @@
     <%= f.text_area :name %>
   </p>
   <p>
-    <%= label :keyword_name %><br />
-    <%= text_field :keyword_name %>
+    <%= label_tag :keyword_name %><br />
+    <%= text_field_tag :keyword_name %>
   </p>
   <p>
     <%= f.submit 'Create' %>

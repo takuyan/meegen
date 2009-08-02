@@ -1,17 +1,24 @@
+<p id="show_new_meegen" class="ui-corner-all clearfix">
+  <%= link_to image_tag("/images/pngs/add.png", :size => "60x60"), new_meegen_path, :class => "left" %>
+  <span>あたらしく作成する</span>
+</p>
 <% if @meegens && @meegens.size > 0 -%>
-  <ul>
+  <ul id="meegen_list">
   <% @meegens.each do |meegen| %>
-    <li>
-      <%=hbr meegen.name %>
+    <li class="ui-corner-all">
+      <p class="contant">
+        <%=hbr meegen.name %>
+        <%=h meegen.tag_list %>
+        <%=h meegen.comments %>
+      </p>
+      <p class="ctrl_panel">
+        <%= link_to 'Show', meegen %>
+        <%= link_to 'Edit', edit_meegen_path(meegen) %>
+        <%= link_to 'Destroy', meegen, :confirm => 'Are you sure?', :method => :delete %>
+      </p>
     </li>
-    <%=h meegen.tag_list %>
-    <%=h meegen.comments %>
-    <%= link_to 'Show', meegen %>
-    <%= link_to 'Edit', edit_meegen_path(meegen) %>
-    <%= link_to 'Destroy', meegen, :confirm => 'Are you sure?', :method => :delete %>
   <% end -%>
   </ul>
 <% end -%>
 
-<%= link_to 'New meegen', new_meegen_path %>
 

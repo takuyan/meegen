@@ -10,8 +10,8 @@
     <%= javascript_include_tag "jquery.corner" %>
     <%= yield :javascript %>
 
-    <title><%= yield :title %>Meegen - いいことばをシェアしたい！</title>
-    <meta content="Meegen - いいことばをシェアしたい！" name="description" /> 
+    <title><%= yield :title %>Meegen - いいことばあつめ</title>
+    <meta content="Meegen - いいことばあつめ" name="description" /> 
     <meta content="名言, 言霊" name="keywords" /> 
     <meta content="kattton" name="author" /> 
     <meta content="Copyright &copy; kattton." name="copyright" />
@@ -22,11 +22,28 @@
   </head> 
   <body>
     <div id="wrapper">
-      <div id="header">
-        <%= image_tag "/images/logo.png" %>
+      <div id="header" class="clearfix">
+        <p class="right">
+          <span>
+            いいことばを集めるサイト
+          </span>
+          <%= image_tag("/images/pngs/favorite.png", :alt => "お気に入りに追加", :size => "60x60") %>
+          <%= image_tag("/images/pngs/rss_2.png", :size => "60x60") %>
+          <%= image_tag("/images/pngs/help.png", :size => "60x60") %>
+        </p>
+        <p class="left">
+          <%= image_tag "/images/logo.png" %>
+        </p>
       </div>
-      <%= yield %>
+      <div id="container" class="ui-corner-all">
+        <%= yield %>
+      </div>
       <div id="footer">
+        <p>
+          <%= link_to "TOP", url_for("/") %> |
+          <%= link_to "Keyword", url_for(:keywords) %> |
+          <%= link_to "Comment", url_for(:comments) %> 
+        </p>
       </div>
     </div>
   </body>
