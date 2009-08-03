@@ -27,7 +27,7 @@
           <span>
             いいことばを集めるサイト
           </span>
-          <%= image_tag("/images/pngs/favorite.png", :alt => "お気に入りに追加", :size => "60x60") %>
+          <%= image_tag("/images/pngs/favorite.png", :title => "お気に入りに追加", :size => "60x60") %>
           <%= image_tag("/images/pngs/rss_2.png", :size => "60x60") %>
           <%= image_tag("/images/pngs/help.png", :size => "60x60") %>
         </p>

@@ -78,3 +78,13 @@ body {
         background-color: #b7a75c; }
         body #wrapper #container #meegen_list li:hover .ctrl_panel {
           display: block; }
+
+#meegen_new {
+  background-color: #b7a75c;
+  width: 600px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  padding: 5px; }
+  #meegen_new p {
+    margin: 0; }
