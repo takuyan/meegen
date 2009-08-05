@@ -81,10 +81,15 @@ body {
 
 #meegen_new {
   background-color: #b7a75c;
-  width: 600px;
+  width: 700px;
   margin-right: auto;
   margin-left: auto;
-  text-align: center;
+  text-align: right;
   padding: 5px; }
   #meegen_new p {
     margin: 0; }
+    #meegen_new p #meegen_name {
+      font-size: 150%;
+      border-width: 0;
+      border-style: none;
+      border-color: none; }

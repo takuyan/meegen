@@ -104,12 +104,23 @@ body
 
 #meegen_new
   background-color: #b7a75c
-  width: 600px
+  width: 700px
+  position: absolute
+  top: 100px
+  left: 0px
   margin-right: auto
   margin-left: auto
-  text-align: center
+  text-align: right
   padding: 5px
 
   p
     margin: 0
+
+    #meegen_name
+      font-size: 150%
+      border:
+        width: 0
+        style: none
+        color: none
+
 

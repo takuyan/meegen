@@ -1,12 +1,12 @@
-<p id="show_new_meegen" class="ui-corner-all clearfix">
+<div id="show_new_meegen" class="corner_round clearfix">
   <%= link_to image_tag("/images/pngs/add.png", :size => "60x60"), new_meegen_path, :class => "left" %>
   <span>あたらしく作成する</span>
-  <%= render :partial => 'new' %>
-</p>
+</div>
+<%= render :partial => 'new' %>
 <% if @meegens && @meegens.size > 0 -%>
   <ul id="meegen_list">
   <% @meegens.each do |meegen| %>
-    <li class="ui-corner-all">
+    <li class="corner_round">
       <p class="contant">
         <%=hbr meegen.name %>
         <%=h meegen.tag_list %>
@@ -21,5 +21,3 @@
   <% end -%>
   </ul>
 <% end -%>
-
-

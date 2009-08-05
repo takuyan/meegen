@@ -6,8 +6,11 @@
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" /> 
     <meta content="text/css" http-equiv="Content-Style-Type" /> 
     <meta content="text/javascript" http-equiv="Content-Script-Type" /> 
-    <%= javascript_include_tag :defaults %>
+    <%= javascript_include_tag "jquery" %>
+    <%= javascript_include_tag "jquery-ui" %>
+    <%= javascript_include_tag "jrails" %>
     <%= javascript_include_tag "jquery.corner" %>
+    <%= javascript_include_tag "application" %>
     <%= yield :javascript %>
 
     <title><%= yield :title %>Meegen - いいことばあつめ</title>
@@ -35,7 +38,7 @@
           <%= image_tag "/images/logo.png" %>
         </p>
       </div>
-      <div id="container" class="ui-corner-all">
+      <div id="container" class="corner_round">
         <%= yield %>
       </div>
       <div id="footer">

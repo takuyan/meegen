@@ -4,7 +4,7 @@
     <%= f.error_messages %>
 
     <p>
-      <%= f.text_area :name, :size => "50x10" %>
+      <%= f.text_area :name, :size => "25x5" %>
     </p>
     <p>
     <label for="keyword_name">分類</label><br />

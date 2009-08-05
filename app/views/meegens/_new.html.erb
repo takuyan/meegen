@@ -1,10 +1,10 @@
-<div id="meegen_new" class="ui-corner-all">
+<div id="meegen_new" class="corner_round">
   <% @meegen = Meegen.new %>
   <% form_for(@meegen) do |f| %>
     <%= f.error_messages %>
 
     <p>
-      <%= f.text_area :name, :size => "50x10" %>
+      <%= f.text_area :name, :size => "40x5" %>
     </p>
     <p>
     <label for="keyword_name">分類</label><br />
