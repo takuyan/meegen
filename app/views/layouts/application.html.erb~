@@ -13,7 +13,7 @@
     <%= javascript_include_tag "application" %>
     <%= yield :javascript %>
 
-    <title><%= yield :title %>Meegen - いいことばあつめ</title>
+    <title><%= yield :title %>Meegen</title>
     <meta content="Meegen - いいことばあつめ" name="description" /> 
     <meta content="名言, 言霊" name="keywords" /> 
     <meta content="kattton" name="author" /> 
@@ -28,14 +28,13 @@
       <div id="header" class="clearfix">
         <p class="right">
           <span>
-            いいことばを集めるサイト
           </span>
           <%= image_tag("/images/pngs/favorite.png", :title => "お気に入りに追加", :size => "60x60") %>
           <%= image_tag("/images/pngs/rss_2.png", :size => "60x60") %>
           <%= image_tag("/images/pngs/help.png", :size => "60x60") %>
         </p>
         <p class="left">
-          <%= image_tag "/images/logo.png" %>
+          <%= image_tag "/images/ico_logo.png" %>
         </p>
       </div>
       <div id="container" class="corner_round">
