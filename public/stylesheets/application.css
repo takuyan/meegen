@@ -74,22 +74,32 @@ body {
             border-bottom-color: gray; }
           body #wrapper #container #meegen_list li p.ctrl_panel {
             display: none; }
-      body #wrapper #container #meegen_list li:hover {
-        background-color: #b7a75c; }
-        body #wrapper #container #meegen_list li:hover .ctrl_panel {
-          display: block; }
 
 #meegen_new {
+  display: none;
   background-color: #b7a75c;
-  width: 700px;
+  width: auto;
   margin-right: auto;
   margin-left: auto;
   text-align: right;
   padding: 5px; }
-  #meegen_new p {
-    margin: 0; }
-    #meegen_new p #meegen_name {
-      font-size: 150%;
-      border-width: 0;
-      border-style: none;
-      border-color: none; }
+  #meegen_new #new_nav {
+    float: left;
+    height: 200px;
+    width: 210px;
+    background-image: url(/images/fukidashi.png);
+    background-position: right center;
+    background-repeat: no-repeat; }
+  #meegen_new #new_main {
+    float: right;
+    width: 720px; }
+    #meegen_new #new_main p {
+      margin: 0;
+      text-align: left; }
+      #meegen_new #new_main p #meegen_name {
+        width: 100%;
+        height: 200px;
+        font-size: 150%;
+        border-width: 0;
+        border-style: none;
+        border-color: none; }

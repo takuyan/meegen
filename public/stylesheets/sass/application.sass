@@ -96,28 +96,39 @@ body
             &.ctrl_panel
               display: none
 
-        li:hover
-          background-color: #b7a75c
-
-          .ctrl_panel
-            display: block
-
 #meegen_new
+  display: none
   background-color: #b7a75c
-  width: 700px
+  width: auto
   margin-right: auto
   margin-left: auto
   text-align: right
   padding: 5px
 
-  p
-    margin: 0
+  #new_nav
+    float: left
+    height: 200px
+    width: 210px
+    background:
+      image: url(/images/fukidashi.png)
+      position: right center
+      repeat: no-repeat
 
-    #meegen_name
-      font-size: 150%
-      border:
-        width: 0
-        style: none
-        color: none
+  #new_main
+    float: right
+    width: 720px
+
+    p
+      margin: 0
+      text-align: left
+
+      #meegen_name
+        width: 100%
+        height: 200px
+        font-size: 150%
+        border:
+          width: 0
+          style: none
+          color: none
 
 

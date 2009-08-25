@@ -1,18 +1,21 @@
-<div id="meegen_new" class="corner_round">
-  <% @meegen = Meegen.new %>
-  <% form_for(@meegen) do |f| %>
-    <%= f.error_messages %>
+<div id="meegen_new" class="clearfix ui-corner-all">
+  <div id="new_nav">
+  </div>
+  <div id="new_main">
+    <% @meegen = Meegen.new %>
+    <% form_for(@meegen) do |f| %>
+      <%= f.error_messages %>
 
-    <p>
-      <%= f.text_area :name, :size => "40x5" %>
-    </p>
-    <p>
-    <label for="keyword_name">分類</label><br />
-      <%= text_field_tag :keyword_name %>
-    </p>
-    <p>
-      <%= f.submit 'Create' %>
-    </p>
-  <% end %>
-
+      <p>
+      <%= f.text_area :name, :size => "40x5", :class => "ui-corner-all" %>
+      </p>
+      <p>
+      <label for="keyword_name">分類</label>
+        <%= text_field_tag :keyword_name %>
+      </p>
+      <p>
+        <%= f.submit 'Create' %>
+      </p>
+    <% end %>
+  </div>
 </div>

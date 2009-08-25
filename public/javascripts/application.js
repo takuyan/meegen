@@ -7,7 +7,7 @@ $(function(){
   $(".corner_round_bottom").corner("bottom");
 
   $("#show_new_meegen").click(function(){
-    $("#new_meegen").blindToggle();
+    $("#meegen_new").slideToggle();
   });
 
   //$("#tabs").tabs();
