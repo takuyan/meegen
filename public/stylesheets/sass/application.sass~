@@ -1,10 +1,28 @@
 @charset "UTF-8"
 
+// fimale
+//!color1 = #460a0a
+//!color2 = #DD4830 
+//!color3 = #b7a75c
+
+// male
+!color1 = #392e32 
+!color2 = #4c335a 
+!color3 = #b7a75c
+
 .right
   float: right
 
 .left
   float: left
+
+.button
+  background:
+    image: url(/images/button.png)
+    repeat: no-repeat
+    position: center
+  width: 133px
+  height: 29px
 
 .clearfix
   overflow: hidden
@@ -28,7 +46,7 @@ body
   width: auto
   margin-left: auto
   margin-right: auto
-  background-color: #460a0a
+  background-color = !color1
 
   #wrapper
     width: 960px
@@ -41,7 +59,7 @@ body
 
       p
         margin: 0
-        color: #dd4830
+        color = !color2
         font-size: 85%
 
     #footer
@@ -61,7 +79,7 @@ body
 
     #container
       padding: 10px
-      background-color: #dd4830
+      background-color = !color2
       color: #fff
 
       #show_new_meegen
@@ -71,10 +89,6 @@ body
 
         span
           line-height: 3.5em
-
-      #show_new_meegen:hover
-        background-color: #b7a75c
-        font-weight: bold
 
       #meegen_list
         li
@@ -96,15 +110,9 @@ body
             &.ctrl_panel
               display: none
 
-        li:hover
-          background-color: #b7a75c
-
-          .ctrl_panel
-            display: block
-
 #meegen_new
   display: none
-  background-color: #b7a75c
+  background-color = !color3
   width: auto
   margin-right: auto
   margin-left: auto

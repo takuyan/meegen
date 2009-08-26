@@ -14,7 +14,7 @@
     <%= yield :javascript %>
 
     <title><%= yield :title %>Meegen</title>
-    <meta content="Meegen - いいことばあつめ" name="description" /> 
+    <meta content="Meegen" name="description" /> 
     <meta content="名言, 言霊" name="keywords" /> 
     <meta content="kattton" name="author" /> 
     <meta content="Copyright &copy; kattton." name="copyright" />
@@ -34,7 +34,7 @@
           <%= image_tag("/images/pngs/help.png", :size => "60x60") %>
         </p>
         <p class="left">
-          <%= image_tag "/images/ico_logo.png" %>
+        <%= link_to(image_tag("/images/ico_logo.png"), url_for("/")) %>
         </p>
       </div>
       <div id="container" class="corner_round">

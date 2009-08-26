@@ -7,10 +7,27 @@ $(function(){
   $(".corner_round_bottom").corner("bottom");
 
   $("#show_new_meegen").click(function(){
-    $("#meegen_new").toggle();
+    $("#meegen_new").slideToggle();
   });
 
-  //$("#tabs").tabs();
+  $("#show_new_meegen").mouseover(function(){
+    $(this).animate({
+        fontSize: "120%"
+      }, 1000);
+    $("#show_new_meegen_img").animate({
+        width: "100px",
+        height: "100px"
+      }, 1000);
+  });
+  $("#show_new_meegen").mouseout(function(){
+    $(this).animate({
+        fontSize: "100%"
+      }, 1000);
+    $("#show_new_meegen_img").animate({
+        width: "60px",
+        height: "60px"
+      }, 1000);
+  });
 });
 
 

@@ -5,6 +5,13 @@
 .left {
   float: left; }
 
+.button {
+  background-image: url(/images/button.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 133px;
+  height: 29px; }
+
 .clearfix {
   overflow: hidden; }
 
@@ -25,7 +32,7 @@ body {
   width: auto;
   margin-left: auto;
   margin-right: auto;
-  background-color: #460a0a; }
+  background-color: #392e32; }
   body #wrapper {
     width: 960px;
     margin-right: auto;
@@ -35,7 +42,7 @@ body {
       height: 100px; }
       body #wrapper #header p {
         margin: 0;
-        color: #dd4830;
+        color: #4c335a;
         font-size: 85%; }
     body #wrapper #footer {
       width: 100%;
@@ -49,7 +56,7 @@ body {
           color: #fff; }
     body #wrapper #container {
       padding: 10px;
-      background-color: #dd4830;
+      background-color: #4c335a;
       color: #fff; }
       body #wrapper #container #show_new_meegen {
         width: 300px;
@@ -57,9 +64,6 @@ body {
         cursor: pointer; }
         body #wrapper #container #show_new_meegen span {
           line-height: 3.5em; }
-      body #wrapper #container #show_new_meegen:hover {
-        background-color: #b7a75c;
-        font-weight: bold; }
       body #wrapper #container #meegen_list li {
         cursor: pointer;
         padding: 5px;
@@ -100,6 +104,10 @@ body {
         width: 100%;
         height: 200px;
         font-size: 150%;
+        border-width: 0;
+        border-style: none;
+        border-color: none; }
+      #meegen_new #new_main p #keyword_name {
         border-width: 0;
         border-style: none;
         border-color: none; }

@@ -10,7 +10,24 @@ $(function(){
     $("#meegen_new").slideToggle();
   });
 
-  //$("#tabs").tabs();
+  $("#show_new_meegen").mouseover(function(){
+    $(this).animate({
+        fontSize: "120%"
+      }, 1000);
+    $("#show_new_meegen_img").animate({
+        width: "80px",
+        height: "80px"
+      }, 1000);
+  });
+  $("#show_new_meegen").mouseout(function(){
+    $(this).animate({
+        fontSize: "100%"
+      }, 1000);
+    $("#show_new_meegen_img").animate({
+        width: "60px",
+        height: "60px"
+      }, 1000);
+  });
 });
 
 

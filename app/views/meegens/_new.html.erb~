@@ -1,4 +1,4 @@
-<div id="meegen_new" class="clearfix corner_round">
+<div id="meegen_new" class="clearfix ui-corner-all">
   <div id="new_nav">
   </div>
   <div id="new_main">
@@ -14,7 +14,7 @@
         <%= text_field_tag :keyword_name %>
       </p>
       <p>
-        <%= f.submit 'Create' %>
+      <%= f.submit '', :class => "button" %>
       </p>
     <% end %>
   </div>
