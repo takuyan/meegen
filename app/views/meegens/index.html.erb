@@ -6,17 +6,24 @@
 <% if @meegens && @meegens.size > 0 -%>
   <ul id="meegen_list">
   <% @meegens.each do |meegen| %>
-    <li class="corner_round">
-      <p class="content">
-        <%=hbr meegen.name %>
-        <%=h meegen.tag_list %>
-        <%=h meegen.comments %>
-      </p>
-      <p class="ctrl_panel">
-        <%= link_to 'Show', meegen %>
-        <%= link_to 'Edit', edit_meegen_path(meegen) %>
-        <%= link_to 'Destroy', meegen, :confirm => 'Are you sure?', :method => :delete %>
-      </p>
+    <li class="corner_round clearfix">
+      <div class="add_fav">
+        <%= image_tag "/images/50icons/1.png", :title => meegen.id %>
+      </div>
+      <div class="content_col">
+        <p class="content">
+          <%=hbr meegen.name %>
+        </p>
+        <p class="meegen_info">
+          分類：<%=h meegen.tag_list %> | 
+          <%=h meegen.created_at.strftime("%Y/%m/%d %X") %>
+        </p>
+        <p class="ctrl_panel">
+          <%= link_to 'Show', meegen %>
+          <%= link_to 'Edit', edit_meegen_path(meegen) %>
+          <%= link_to 'Destroy', meegen, :confirm => 'Are you sure?', :method => :delete %>
+        </p>
+      </div>
     </li>
   <% end -%>
   </ul>

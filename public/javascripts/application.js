@@ -10,6 +10,11 @@ $(function(){
     $("#meegen_new").slideToggle();
   });
 
+  $(".add_fav img").mouseover(function(){
+    $(this).fade();
+    $(this).appear();
+  });
+  /*
   $("#show_new_meegen").mouseover(function(){
     $(this).animate({
         fontSize: "120%"
@@ -28,6 +33,7 @@ $(function(){
         height: "60px"
       }, 1000);
   });
+  */
 });
 
 

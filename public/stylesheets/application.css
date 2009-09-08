@@ -69,13 +69,24 @@ body {
         padding: 5px;
         font-size: 100%;
         line-height: 1.5em; }
+        body #wrapper #container #meegen_list li div.add_fav {
+          float: left;
+          width: 70px;
+          height: 50px; }
+        body #wrapper #container #meegen_list li div.content_col {
+          float: left;
+          width: 860px; }
         body #wrapper #container #meegen_list li p {
           margin: 5px;
           padding-bottom: 5px; }
           body #wrapper #container #meegen_list li p.content {
+            font-size: 140%;
+            font-weight: bold;
             border-bottom-width: 1px;
             border-bottom-style: dashed;
             border-bottom-color: gray; }
+          body #wrapper #container #meegen_list li p.meegen_info {
+            text-align: right; }
           body #wrapper #container #meegen_list li p.ctrl_panel {
             display: none; }
 
@@ -89,16 +100,23 @@ body {
   padding: 5px; }
   #meegen_new #new_nav {
     float: left;
+    display: inline;
+    position: relative;
     height: 200px;
     width: 210px;
     background-image: url(/images/fukidashi.png);
     background-position: right center;
     background-repeat: no-repeat; }
+    #meegen_new #new_nav img {
+      position: absolute;
+      top: 40px;
+      left: 40px; }
   #meegen_new #new_main {
     float: right;
     width: 720px; }
     #meegen_new #new_main p {
       margin: 0;
+      margin-bottom: 5px;
       text-align: left; }
       #meegen_new #new_main p #meegen_name {
         width: 100%;

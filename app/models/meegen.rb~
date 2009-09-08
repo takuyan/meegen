@@ -1,5 +1,9 @@
 class Meegen < ActiveRecord::Base
   acts_as_taggable
 
-  has_many :comments
+  has_many :comments,
+    :dependent => :destroy
+
+  def add_fav
+  end
 end

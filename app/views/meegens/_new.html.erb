@@ -1,5 +1,6 @@
 <div id="meegen_new" class="clearfix ui-corner-all">
   <div id="new_nav">
+    <%= image_tag "/images/pngs/Twitter.png" %>
   </div>
   <div id="new_main">
     <% @meegen = Meegen.new %>
@@ -10,7 +11,7 @@
       <%= f.text_area :name, :size => "40x5", :class => "ui-corner-all" %>
       </p>
       <p>
-      <label for="keyword_name">分類</label>
+      <label for="keyword_name">分類(タグ)</label>
         <%= text_field_tag :keyword_name %>
       </p>
       <p>

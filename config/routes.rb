@@ -15,9 +15,9 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :comments
 
   map.resources :keywords
+  map.k "/k/:id/:name", :controller => "keywords", :action => "show", :id => nil
 
   map.resources :meegens
-
   map.index "/", :controller => "meegens", :action => "index"
 
   # The priority is based upon order of creation: first created -> highest priority.

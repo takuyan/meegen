@@ -97,15 +97,30 @@ body
           font-size: 100%
           line-height: 1.5em
 
+          div.add_fav
+            float: left
+            width: 70px
+            height: 50px
+
+          div.content_col
+            float: left
+            width: 860px
+
           p
             margin: 5px
             padding-bottom: 5px
 
             &.content
+              font:
+                size: 140%
+                weight: bold
               border-bottom: 
                 width: 1px
                 style: dashed
                 color: gray
+
+            &.meegen_info
+              text-align: right
 
             &.ctrl_panel
               display: none
@@ -121,12 +136,21 @@ body
 
   #new_nav
     float: left
+    display: inline
+    position: relative
     height: 200px
     width: 210px
     background:
       image: url(/images/fukidashi.png)
       position: right center
       repeat: no-repeat
+
+    img 
+      position: absolute
+      top: 40px
+      left: 40px
+
+      
 
   #new_main
     float: right
@@ -144,5 +168,12 @@ body
           width: 0
           style: none
           color: none
+
+      #keyword_name
+        border:
+          width: 0
+          style: none
+          color: none
+
 
 

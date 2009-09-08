@@ -1,6 +1,6 @@
 class MeegensController < ApplicationController
 
-  layout :application
+  layout "application"
 
   # GET /meegens
   # GET /meegens.xml

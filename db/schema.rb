@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090813063023) do
+ActiveRecord::Schema.define(:version => 20090908131753) do
 
   create_table "comments", :force => true do |t|
     t.string   "name"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(:version => 20090813063023) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "url"
+    t.integer  "fav",        :default => 0
   end
 
   create_table "sessions", :force => true do |t|

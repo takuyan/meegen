@@ -95,4 +95,9 @@ class MeegensController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def add_fav
+    @meegen = Meegen.find(params[:id])
+    @meegen.add_fav
+  end
 end
