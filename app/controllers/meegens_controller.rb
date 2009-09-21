@@ -99,5 +99,9 @@ class MeegensController < ApplicationController
   def add_fav
     @meegen = Meegen.find(params[:id])
     @meegen.add_fav
+    render :update do |page|
+      page.replace_html "fav_#{@meegen.id.to_s}".to_sym, "#{@meegen.fav}star"
+      # page.visual_effect :highlight, "fav_#{@meegen.id.to_s}".to_sym
+    end
   end
 end

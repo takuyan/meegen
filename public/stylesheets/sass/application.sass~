@@ -101,6 +101,11 @@ body
             float: left
             width: 70px
             height: 50px
+            position: relative
+
+            .fav_star
+              position: absolute
+              left: 10px
 
           div.content_col
             float: left
@@ -158,6 +163,7 @@ body
 
     p
       margin: 0
+        bottom: 5px
       text-align: left
 
       #meegen_name

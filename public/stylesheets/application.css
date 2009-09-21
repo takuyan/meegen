@@ -72,7 +72,15 @@ body {
         body #wrapper #container #meegen_list li div.add_fav {
           float: left;
           width: 70px;
-          height: 50px; }
+          height: 50px;
+          position: relative; }
+          body #wrapper #container #meegen_list li div.add_fav .fav_star {
+            position: absolute;
+            left: 10px; }
+          body #wrapper #container #meegen_list li div.add_fav .fav_count {
+            position: absolute;
+            left: 10px;
+            bottom: 0; }
         body #wrapper #container #meegen_list li div.content_col {
           float: left;
           width: 860px; }

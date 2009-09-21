@@ -8,7 +8,10 @@
   <% @meegens.each do |meegen| %>
     <li class="corner_round clearfix">
       <div class="add_fav">
-        <%= image_tag "/images/50icons/1.png", :title => meegen.id %>
+        <%= link_to_remote(image_tag("/images/50icons/1.png", :title => meegen.id, :class => "fav_star"), :url => {:action => :add_fav, :id => meegen.id}) %>
+        <span class="fav_count" id="fav_<%= meegen.id %>">
+          <%= meegen.fav %>star
+        </span>
       </div>
       <div class="content_col">
         <p class="content">
