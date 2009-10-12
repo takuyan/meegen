@@ -10,20 +10,22 @@ $(function(){
     $("#meegen_new").slideToggle();
   });
 
-  $(".fav_star").mouseover(function(){
-    $(this).fade();
-    $(this).appear();
-  });
+  //$(".fav_star").mouseover(function(){
+  //  $(this).fade();
+  //  $(this).appear();
+  //});
 
   $(".fav_star").click(function(){
     $(this).animate({
       position: "absolute",
-      left: "700px",
+      left: "800px",
       opacity: 0
     }, 1000),
     $(this).animate({
       position: "absolute",
       left: "10px",
+    }, 1),
+    $(this).animate({
       opacity: 1
     }, 1000);
   });

@@ -67,6 +67,10 @@ body
       height: 50px
 
       p
+        margin: 0
+          bottom: 10px
+          left: auto
+          left: auto
         text-align: center
         font-size: 80%
         color: #fff
@@ -100,12 +104,19 @@ body
           div.add_fav
             float: left
             width: 70px
-            height: 50px
+            height: 70px
             position: relative
+            text-align: center
 
             .fav_star
               position: absolute
               left: 10px
+
+            .fav_count
+              display: block
+              position: absolute
+              bottom: 0
+              right: 0
 
           div.content_col
             float: left

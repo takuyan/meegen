@@ -5,7 +5,8 @@ class MeegensController < ApplicationController
   # GET /meegens
   # GET /meegens.xml
   def index
-    @meegens = Meegen.all
+    @new_meegens = Meegen.all(:order => "created_at desc")
+    @popular_meegens = Meegen.all(:order => "fav desc")
 
     respond_to do |format|
       format.html # index.html.erb

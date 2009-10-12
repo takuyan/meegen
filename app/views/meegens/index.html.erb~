@@ -3,31 +3,38 @@
   <span>名言を登録する</span>
 </div>
 <%= render :partial => 'new' %>
-<% if @meegens && @meegens.size > 0 -%>
-  <ul id="meegen_list">
-  <% @meegens.each do |meegen| %>
-    <li class="corner_round clearfix">
-      <div class="add_fav">
-        <%= link_to_remote(image_tag("/images/50icons/1.png", :title => meegen.id, :class => "fav_star"), :url => {:action => :add_fav, :id => meegen.id}) %>
-        <span class="fav_count">
-          <%= meegen.fav %>star
-        </span>
-      </div>
-      <div class="content_col">
-        <p class="content">
-          <%=hbr meegen.name %>
-        </p>
-        <p class="meegen_info">
-          分類：<%=h meegen.tag_list %> | 
-          <%=h meegen.created_at.strftime("%Y/%m/%d %X") %>
-        </p>
-        <p class="ctrl_panel">
-          <%= link_to 'Show', meegen %>
-          <%= link_to 'Edit', edit_meegen_path(meegen) %>
-          <%= link_to 'Destroy', meegen, :confirm => 'Are you sure?', :method => :delete %>
-        </p>
-      </div>
-    </li>
-  <% end -%>
-  </ul>
-<% end -%>
+
+<div id="meegen_area">
+  <div id="popular_meegen_area">
+    <% if @popular_meegens && @popular_meegens.size > 0 -%>
+      <ul id="meegen_list">
+      <% @popular_meegens.each do |meegen| %>
+        <li class="corner_round clearfix">
+          <div class="add_fav">
+            <%= link_to_remote(image_tag("/images/50icons/1.png", :title => meegen.id, :class => "fav_star"), :url => {:action => :add_fav, :id => meegen.id}) %>
+            <span class="fav_count" id="fav_<%= meegen.id %>">
+              <%= meegen.fav %>star
+            </span>
+          </div>
+          <div class="content_col">
+            <p class="content">
+              <%=hbr meegen.name %>
+            </p>
+            <p class="meegen_info">
+              分類：<%=h meegen.tag_list %> | 
+              <%=h meegen.created_at.strftime("%Y/%m/%d %X") %>
+            </p>
+            <p class="ctrl_panel">
+              <%= link_to 'Show', meegen %>
+              <%= link_to 'Edit', edit_meegen_path(meegen) %>
+              <%= link_to 'Destroy', meegen, :confirm => 'Are you sure?', :method => :delete %>
+            </p>
+          </div>
+        </li>
+      <% end -%>
+      </ul>
+    <% end -%>
+  </div>
+
+</div>
+
