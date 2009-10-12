@@ -5,7 +5,12 @@ class Meegen < ActiveRecord::Base
     :dependent => :destroy
 
   def add_fav
-    self.fav += 1
-    self.save
+    if self.fav
+      self.fav += 1
+      self.save
+    else
+      self.fav = 1
+      self.save
+    end
   end
 end
