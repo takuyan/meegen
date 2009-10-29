@@ -1,4 +1,7 @@
 @charset "UTF-8";
+.corner_round {
+  padding: 10px 0; }
+
 .right {
   float: right; }
 
@@ -69,7 +72,6 @@ body {
         body #wrapper #container #show_new_meegen span {
           line-height: 3.5em; }
       body #wrapper #container #meegen_list li {
-        cursor: pointer;
         padding: 5px;
         font-size: 100%;
         line-height: 1.5em; }
@@ -100,6 +102,9 @@ body {
             border-bottom-width: 1px;
             border-bottom-style: dashed;
             border-bottom-color: gray; }
+            body #wrapper #container #meegen_list li p.content a {
+              color: #fff;
+              text-decoration: none; }
           body #wrapper #container #meegen_list li p.meegen_info {
             text-align: right; }
           body #wrapper #container #meegen_list li p.ctrl_panel {
@@ -144,3 +149,12 @@ body {
         border-width: 0;
         border-style: none;
         border-color: none; }
+
+#meegen_show {
+  background-color: #B7A75C;
+  padding: 10px; }
+  #meegen_show h1 {
+    font-size: 160%;
+    font-weight: bold; }
+  #meegen_show #meegen_tags {
+    font-size: 90%; }

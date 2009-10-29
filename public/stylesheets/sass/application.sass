@@ -10,6 +10,9 @@
 !color2 = #4c335a 
 !color3 = #b7a75c
 
+.corner_round
+  padding: 10px 0
+
 .right
   float: right
 
@@ -96,7 +99,6 @@ body
 
       #meegen_list
         li
-          cursor: pointer
           padding: 5px
           font-size: 100%
           line-height: 1.5em
@@ -135,6 +137,10 @@ body
                 width: 1px
                 style: dashed
                 color: gray
+
+              a
+                color: #fff
+                text-decoration: none
 
             &.meegen_info
               text-align: right
@@ -194,4 +200,17 @@ body
           color: none
 
 
+#meegen_show
+  background: 
+    color: #B7A75C
+  padding: 10px
 
+  h1
+    font:
+      size: 160%
+      weight: bold
+
+  #meegen_tags
+    font: 
+      size: 90%
+  
