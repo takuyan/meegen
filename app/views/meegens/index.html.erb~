@@ -5,9 +5,11 @@
 <%= render :partial => 'new' %>
 
 <div id="meegen_area">
+
   <div id="tags">
     <%= Tag.count %>
   </div>
+
   <div id="popular_meegen_area">
     <% if @popular_meegens && @popular_meegens.size > 0 -%>
       <ul id="meegen_list">

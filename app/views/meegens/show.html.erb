@@ -1,12 +1,20 @@
 <div id="meegen_show" class="corner_round">
-  <h1>
-    <%=h @meegen.name %>
-  </h1>
-  <div id="meegen_tags">
-    <b>分類:</b>
-    <%=h @meegen.tag_list %>
+  
+  <div id="meegen_name">
+    <h1>
+      <%=hbr @meegen.name %>
+    </h1>
   </div>
 
+  <div id="meegen_tags">
+    <% form_tag "/meegens/tag" do -%>
+      <%=h @meegen.tag_list %>
+      <%= label_tag :tag %>
+      <%= text_field_tag :tag %>
+      <%= hidden_field_tag "meegen_id", @meegen.id %>
+      <%= submit_tag "add tag" %>
+    <% end -%>
+  </div>
 
   <%= link_to 'Edit', edit_meegen_path(@meegen) %> |
   <%= link_to 'Back', meegens_path %>
@@ -14,7 +22,6 @@
   <% @comment = Comment.new -%>
   <% form_for(@comment) do |f| %>
     <%= f.error_messages %>
-
     <p>
       <%= f.label :name %><br />
       <%= f.text_field :name %>

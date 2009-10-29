@@ -6,7 +6,7 @@ class MeegensController < ApplicationController
   # GET /meegens.xml
   def index
     @new_meegens = Meegen.all(:order => "created_at desc")
-    @popular_meegens = Meegen.all(:order => "")
+    @popular_meegens = Meegen.all(:order => "fav desc")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -72,6 +72,9 @@ class MeegensController < ApplicationController
   # PUT /meegens/1.xml
   def update
     @meegen = Meegen.find(params[:id])
+    if params[:tags]
+      @meegen.tag_list = params[:tags]
+    end
 
     respond_to do |format|
       if @meegen.update_attributes(params[:meegen])

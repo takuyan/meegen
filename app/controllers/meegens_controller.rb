@@ -72,6 +72,9 @@ class MeegensController < ApplicationController
   # PUT /meegens/1.xml
   def update
     @meegen = Meegen.find(params[:id])
+    if params[:tag]
+      @meegen.tag_list = params[:tag]
+    end
 
     respond_to do |format|
       if @meegen.update_attributes(params[:meegen])

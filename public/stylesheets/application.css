@@ -1,4 +1,7 @@
 @charset "UTF-8";
+a {
+  color: #999; }
+
 .corner_round {
   padding: 10px 0; }
 
@@ -151,10 +154,10 @@ body {
         border-color: none; }
 
 #meegen_show {
-  background-color: #B7A75C;
+  background-color: #fff;
   padding: 10px; }
   #meegen_show h1 {
     font-size: 160%;
-    font-weight: bold; }
+    color: #000; }
   #meegen_show #meegen_tags {
     font-size: 90%; }
