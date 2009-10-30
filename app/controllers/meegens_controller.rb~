@@ -72,8 +72,8 @@ class MeegensController < ApplicationController
   # PUT /meegens/1.xml
   def update
     @meegen = Meegen.find(params[:id])
-    if params[:tags]
-      @meegen.tag_list = params[:tags]
+    if params[:tag]
+      @meegen.tag_list = params[:tag]
     end
 
     respond_to do |format|
@@ -107,5 +107,14 @@ class MeegensController < ApplicationController
       page.replace_html "fav_#{@meegen.id.to_s}".to_sym, "#{@meegen.fav}star"
       # page.visual_effect :highlight, "fav_#{@meegen.id.to_s}".to_sym
     end
+  end
+
+  def add_tag
+    @meegen = Meegen.find(params[:meegen_id])
+    @meegen.tag_list = params[:tag]
+    @meegen.save
+    redirect_to @meegen
+  rescue
+    redirect_to root_path
   end
 end

@@ -108,4 +108,13 @@ class MeegensController < ApplicationController
       # page.visual_effect :highlight, "fav_#{@meegen.id.to_s}".to_sym
     end
   end
+
+  def add_tag
+    @meegen = Meegen.find(params[:meegen_id])
+    @meegen.tag_list = params[:tag]
+    @meegen.save
+    redirect_to @meegen
+  rescue
+    redirect_to root_path
+  end
 end

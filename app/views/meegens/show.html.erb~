@@ -7,11 +7,11 @@
   </div>
 
   <div id="meegen_tags">
-    <% form_tag "/meegens/tag" do -%>
-      <%=h @meegen.tag_list %>
+    <%=h @meegen.tag_list %>
+    <% form_tag "/meegens/add_tag" do -%>
       <%= label_tag :tag %>
       <%= text_field_tag :tag %>
-      <%= hidden_field_tag @meegen.id , :value => @meegen.id %>
+      <%= hidden_field_tag "meegen_id", @meegen.id %>
       <%= submit_tag "add tag" %>
     <% end -%>
   </div>

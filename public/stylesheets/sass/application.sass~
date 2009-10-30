@@ -11,7 +11,7 @@
 !color3 = #b7a75c
 
 a
-  color: #fff
+  color: #999
   
 .corner_round
   padding: 10px 0
