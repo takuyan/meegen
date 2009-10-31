@@ -157,6 +157,10 @@ body {
   color: #000;
   background-color: #fff;
   padding: 10px; }
+  #meegen_show #test_ul li {
+    float: left; }
+  #meegen_show #meegen_name {
+    clear: both; }
   #meegen_show h1 {
     font-size: 160%;
     color: #000; }

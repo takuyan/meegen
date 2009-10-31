@@ -7,8 +7,16 @@
   </div>
 
   <div id="meegen_tags">
-    <%=h @meegen.tag_list %>
-    <% form_tag "/meegens/add_tag" do -%>
+    タグ
+    <% @meegen.tags.each do |tag| -%>
+      <span>
+        <%= tag.name -%>
+        <% link_to :action => :remove_tag, :id => @meegen.id, :tag => tag.name do -%>
+          [x]
+        <% end -%>
+      </span>
+    <% end -%>
+    <% form_tag :action => :add_tag do -%>
       <%= label_tag :tag %>
       <%= text_field_tag :tag %>
       <%= hidden_field_tag "meegen_id", @meegen.id %>
@@ -17,23 +25,26 @@
   </div>
 
   <%= link_to 'Edit', edit_meegen_path(@meegen) %> |
+  <%= link_to 'Destroy', meegen, :confirm => 'Are you sure?', :method => :delete %>
   <%= link_to 'Back', meegens_path %>
 
-  <% @comment = Comment.new -%>
-  <% form_for(@comment) do |f| %>
-    <%= f.error_messages %>
-    <p>
-      <%= f.label :name %><br />
-      <%= f.text_field :name %>
-    </p>
-      <%= f.hidden_field :meegen_id, :value => @meegen.id %>
-    <!-- p>
-      <%= f.label :user_name %><br />
-      <%= f.text_field :user_name %>
-    </p -->
-    <p>
-      <%= f.submit 'Create' %>
-    </p>
+  <% if false -%>
+    <% @comment = Comment.new -%>
+    <% form_for(@comment) do |f| %>
+      <%= f.error_messages %>
+      <p>
+        <%= f.label :name %><br />
+        <%= f.text_field :name %>
+      </p>
+        <%= f.hidden_field :meegen_id, :value => @meegen.id %>
+      <!-- p>
+        <%= f.label :user_name %><br />
+        <%= f.text_field :user_name %>
+      </p -->
+      <p>
+        <%= f.submit 'Create' %>
+      </p>
+    <% end %>
   <% end %>
 </div>
 

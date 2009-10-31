@@ -111,10 +111,20 @@ class MeegensController < ApplicationController
 
   def add_tag
     @meegen = Meegen.find(params[:meegen_id])
-    @meegen.tag_list = params[:tag]
+    @meegen.tag_list.add params[:tag].to_s
     @meegen.save
     redirect_to @meegen
   rescue
-    redirect_to root_path
+    redirect_to "/"
+  end
+
+  def remove_tag
+    @meegen = Meegen.find(params[:meegen_id])
+    @meegen.tag_list.remove params[:tag].to_s 
+    @meegen.save
+    redirect_to @meegen
+  rescue
+    redirect_to "/"
   end
 end
+

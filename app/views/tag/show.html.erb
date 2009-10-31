@@ -1,0 +1,14 @@
+<h1>Tag#show</h1>
+<p>Find me in app/views/tag/show.html.erb</p>
+
+<% if @meegens -%>
+  <ul>
+    <% @meegens.each do |meegen| -%>
+      <li>
+        <%= link_to meegen.name, meegen %>
+      </li>
+    <% end -%>
+  </ul>
+<% end -%>
+
+

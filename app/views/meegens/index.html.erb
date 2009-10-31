@@ -6,10 +6,6 @@
 
 <div id="meegen_area">
 
-  <div id="tags">
-    <%= Tag.count %>
-  </div>
-
   <div id="popular_meegen_area">
     <% if @popular_meegens && @popular_meegens.size > 0 -%>
       <ul id="meegen_list">
@@ -24,11 +20,15 @@
           <div class="content_col">
             <p class="content">
               <% link_to meegen_path(:id => meegen.id) do -%>
+                #
                 <%=hbr meegen.name %>
               <% end -%>
             </p>
             <p class="meegen_info">
-              分類：<%=h meegen.tag_list %> | 
+            分類：
+            <% meegen.tags.each do |tag| -%>
+              <%= link_to tag.name, :controller => :tag, :action => :show, :id => tag.id -%>
+            <% end -%>| 
               <%=h meegen.created_at.strftime("%Y/%m/%d %X") %>
             </p>
             <p class="ctrl_panel">

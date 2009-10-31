@@ -204,10 +204,18 @@ body
 
 
 #meegen_show
+  color: #000
   background: 
     //color: #B7A75C
     color: #fff
   padding: 10px
+
+  #test_ul
+    li 
+      float: left
+
+  #meegen_name
+    float: both
 
   h1
     font:

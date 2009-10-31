@@ -1,0 +1,12 @@
+<h1>Tag#index</h1>
+<p>Find me in app/views/tag/index.html.erb</p>
+
+<% if @tags -%>
+  <ul>
+    <% @tags.each do |tag| -%>
+      <li>
+      <%= link_to tag.name, :action => :show, :id => tag.id -%>
+      </li>
+    <% end -%>
+  </ul>
+<% end -%>
