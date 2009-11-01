@@ -4,11 +4,8 @@
   <%= f.error_messages %>
   <%= f.label :name %><br />
   <%= f.text_area :name %>
-  <%= @meegen.tag_list %>
-  <%= label_tag :tag %>
-  <%= text_field_tag :tag %>
   <%= f.submit 'Update' %>
 <% end %>
 
-<%= link_to 'Show', @meegen %> |
-<%= link_to 'Back', meegens_path %>
+<%= link_to 'Show', m_path(:id => @meegen.id, :name => @meegen.name) %> |
+<%= link_to 'Back', root_path %>
