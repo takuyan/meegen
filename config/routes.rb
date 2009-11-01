@@ -20,6 +20,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :meegens
   map.index "/", :controller => "meegens", :action => "index"
 
+  map.tag "/tag/:id/:name", :controller => "tag", :action => "show", :name => nil
+
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

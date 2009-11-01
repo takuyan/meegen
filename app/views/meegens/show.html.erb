@@ -7,10 +7,10 @@
   </div>
 
   <div id="meegen_tags">
-    タグ
+    分類： 
     <% @meegen.tags.each do |tag| -%>
       <span>
-        <%= tag.name -%>
+        <%= link_to tag.name, url_for(tag) -%>
         <% link_to :action => :remove_tag, :id => @meegen.id, :tag => tag.name do -%>
           [x]
         <% end -%>

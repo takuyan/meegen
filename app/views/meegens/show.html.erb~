@@ -7,10 +7,10 @@
   </div>
 
   <div id="meegen_tags">
-    タグ
+    分類： 
     <% @meegen.tags.each do |tag| -%>
       <span>
-        <%= tag.name -%>
+        <%= link_to tag.name, tag_url -%>
         <% link_to :action => :remove_tag, :id => @meegen.id, :tag => tag.name do -%>
           [x]
         <% end -%>
@@ -25,7 +25,7 @@
   </div>
 
   <%= link_to 'Edit', edit_meegen_path(@meegen) %> |
-  <%= link_to 'Destroy', meegen, :confirm => 'Are you sure?', :method => :delete %>
+  <%= link_to 'Destroy', @meegen, :confirm => 'Are you sure?', :method => :delete %>
   <%= link_to 'Back', meegens_path %>
 
   <% if false -%>

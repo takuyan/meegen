@@ -1,14 +1,4 @@
-<div id="show_new_meegen" class="corner_round clearfix">
-  <%= image_tag "/images/pngs/add.png", :size => "60x60", :id => "show_new_meegen_img", :class => "left" %>
-  <span>名言を登録する</span>
-</div>
-<%= render :partial => 'new' %>
-
 <div id="meegen_area">
-
-  <div id="tags">
-    <%= Tag.count %>
-  </div>
 
   <div id="popular_meegen_area">
     <% if @popular_meegens && @popular_meegens.size > 0 -%>
@@ -33,7 +23,7 @@
             <% meegen.tags.each do |tag| -%>
               <%= link_to tag.name, :controller => :tag, :action => :show, :id => tag.id -%>
             <% end -%>| 
-              <%=h meegen.created_at.strftime("%Y/%m/%d %X") %>
+              <%=h meegen.created_at.strftime("%Y/%m/%d %H:%M") %>
             </p>
             <p class="ctrl_panel">
               <%= link_to 'Show', meegen %>
@@ -47,4 +37,12 @@
     <% end -%>
   </div>
 </div>
+
+<div id="show_new_meegen" class="corner_round clearfix">
+  <%= image_tag "/images/pngs/add.png", :size => "60x60", :id => "show_new_meegen_img", :class => "left" %>
+  <span>名言を登録する</span>
+</div>
+<%= render :partial => 'new' %>
+
+
 
