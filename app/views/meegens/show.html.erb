@@ -1,3 +1,7 @@
+<% content_for :title do -%>
+  <%= "#{@meegen.name} - " -%>
+<% end -%>
+
 <div id="meegen_show" class="corner_round">
   
   <div id="meegen_name">
@@ -24,9 +28,9 @@
     <% end -%>
   </div>
 
-  <%= link_to 'Edit', edit_meegen_path(@meegen) %> |
-  <%= link_to 'Destroy', @meegen, :confirm => 'Are you sure?', :method => :delete %>
-  <%= link_to 'Back', meegens_path %>
+  <%= link_to '編集', edit_meegen_path(@meegen) %> |
+  <%# link_to 'Destroy', @meegen, :confirm => 'Are you sure?', :method => :delete %>
+  <%= link_to '戻る', meegens_path %>
 
   <% if false -%>
     <% @comment = Comment.new -%>

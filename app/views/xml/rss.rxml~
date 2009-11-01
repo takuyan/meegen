@@ -11,7 +11,7 @@ xml.rss('version' => '2.0') do
     xml.pubDate(Time.now.strftime("%a, %d %b %Y %H:%M:%S %Z"))
     @meegens.each do |m|
       xml.item do
-        xml.title(m.name)
+        xml.title(hbr m.name)
         xml.link(request.protocol + request.host_with_port +
                  url_for(:controller => :meegen, :action => :show, :id => m.id))
         xml.description(m.tag_list)

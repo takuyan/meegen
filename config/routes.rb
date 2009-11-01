@@ -18,8 +18,10 @@ ActionController::Routing::Routes.draw do |map|
   map.k "/k/:id/:name", :controller => "keywords", :action => "show", :id => nil
 
   map.resources :meegens
+  map.m "/m/:id/:name", :controller => "meegens", :action => "show", :name => nil
   map.index "/", :controller => "meegens", :action => "index"
 
+  map.resources :tags
   map.tag "/tag/:id/:name", :controller => "tag", :action => "show", :name => nil
 
   # The priority is based upon order of creation: first created -> highest priority.
