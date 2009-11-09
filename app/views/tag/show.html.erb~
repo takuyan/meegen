@@ -2,13 +2,13 @@
   <%= "#{@tag.name} - " %>
 <% end -%>
 <div id="tag_show">
-  <h1><%= @tag %></h1>
+  <h1>É^ÉOÅF<%= @tag %></h1>
 
   <% if @meegens -%>
     <ul>
       <% @meegens.each do |meegen| -%>
         <li>
-          <%= link_to meegen.name, meegen %>
+        <%= link_to meegen.name, m_path(:id => meegen.id, :name => meegen.name) -%>
         </li>
       <% end -%>
     </ul>

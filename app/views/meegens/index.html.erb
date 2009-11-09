@@ -1,10 +1,10 @@
 <div id="meegen_area">
 
-  <div id="popular_meegen_area">
+  <div id="popular_meegen_area" class="clearfix">
     <% if @popular_meegens && @popular_meegens.size > 0 -%>
-      <ul class="meegen_list">
+      <ul class="meegen_list clearfix">
       <% @popular_meegens.each do |meegen| %>
-        <li class="corner_round clearfix">
+        <li class="clearfix">
           <div class="add_fav">
             <%= link_to_remote(image_tag("/images/50icons/1.png", :title => meegen.id, :class => "fav_star"), :url => {:action => :add_fav, :id => meegen.id}) %>
             <span class="fav_count" id="fav_<%= meegen.id %>">
@@ -13,8 +13,7 @@
           </div>
           <div class="content_col">
             <p class="content">
-            <% link_to m_path(:id => meegen.id, :name => meegen.name) do -%>
-                #
+              <% link_to m_path(:id => meegen.id, :name => h(meegen.name.split(//u)[0..50].to_s)) do -%>
                 <%=hbr meegen.name %>
               <% end -%>
             </p>
@@ -37,6 +36,21 @@
       <% end -%>
       </ul>
     <% end -%>
+  </div>
+
+  <div id="sub">
+    <div id="recent_meegen" class="corner_round clearfix">
+      <h3>
+        最新の名言
+      </h3>
+      <ul>
+        <% @new_meegens.each do |m| -%>
+          <li>
+            <%= m.name %>
+          </li>
+        <% end -%>
+      </ul>
+    </div>
   </div>
 </div>
 

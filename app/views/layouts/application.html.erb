@@ -29,13 +29,9 @@
         <p class="right">
           <span>
           </span>
-          <%= image_tag("/images/pngs/favorite.png", :title => "お気に入りに追加", :size => "60x60") %>
-
           <% link_to :controller => 'xml', :action => 'rss' do -%>
             <%= image_tag("/images/pngs/rss_2.png", :size => "60x60") %>
           <% end -%>
-          
-          <%= image_tag("/images/pngs/help.png", :size => "60x60") %>
         </p>
         <p class="left">
           <%= link_to(image_tag("/images/curlz_logo.png"), url_for("/")) %>
@@ -76,20 +72,21 @@
           </script>
         </div>
         <p>
-          <%= link_to "TOP", url_for("/") %> | <%= link_to "Keyword", url_for(:keywords) %> | <%= link_to "Comment", url_for(:comments) %> 
+          <%= link_to "TOP", url_for("/") %>
         </p>
       </div>
     </div>
 
-    <script type="text/javascript">
+      <script type="text/javascript">
       var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
       document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-    </script>
-    <script type="text/javascript">
+      </script>
+      <script type="text/javascript">
       try {
-        var pageTracker = _gat._getTracker("UA-3870468-3");
-        pageTracker._trackPageview();
+      var pageTracker = _gat._getTracker("UA-3870468-4");
+      pageTracker._trackPageview();
       } catch(err) {}</script>
+    
   </body>
 </html>
 

@@ -7,6 +7,7 @@ class MeegensController < ApplicationController
   def index
     @new_meegens = Meegen.all(:order => "created_at desc")
     @popular_meegens = Meegen.all(:order => "fav desc")
+    @tags = Meegen.tag_counts
 
     respond_to do |format|
       format.html # index.html.erb
