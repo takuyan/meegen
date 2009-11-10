@@ -1,6 +1,9 @@
 <div id="meegen_area">
 
   <div id="popular_meegen_area" class="clearfix">
+    <h3>
+      人気の名言
+    </h3>
     <% if @popular_meegens && @popular_meegens.size > 0 -%>
       <ul class="meegen_list clearfix">
       <% @popular_meegens.each do |meegen| %>
@@ -17,13 +20,16 @@
                 <%=hbr meegen.name %>
               <% end -%>
             </p>
-            <p class="meegen_info">
-            分類：
-            <% meegen.tags.each do |tag| -%>
-              <%= link_to tag.name, tag_path(:id => tag.id, :name => tag.name) -%>
-            <% end -%>| 
+            <div class="meegen_info">
+              <ul class="crumbs ui-corner-all">
+                <% meegen.tags.each do |tag| -%>
+                  <li>
+                    <%= link_to tag.name, tag_path(:id => tag.id, :name => tag.name) -%>
+                  </li>
+                <% end -%>
+              </ul>
               <%=h meegen.created_at.strftime("%Y/%m/%d %H:%M") %>
-            </p>
+            </div>
             <% if false -%>
               <p class="ctrl_panel">
                 <%= link_to 'Show', meegen %>

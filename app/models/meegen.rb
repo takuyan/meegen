@@ -16,4 +16,8 @@ class Meegen < ActiveRecord::Base
       self.save
     end
   end
+
+  def similar
+    self.tags
+  end
 end

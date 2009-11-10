@@ -7,7 +7,6 @@ class Meegen < ActiveRecord::Base
   validates_presence_of :name,
     :message => "entry name"
 
-
   def add_fav
     if self.fav
       self.fav += 1
@@ -16,5 +15,9 @@ class Meegen < ActiveRecord::Base
       self.fav = 1
       self.save
     end
+  end
+
+  def similar
+    self.tag_list
   end
 end

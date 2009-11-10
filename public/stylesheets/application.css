@@ -45,10 +45,15 @@ body {
     margin-left: auto; }
     body #wrapper #header {
       width: 100%;
-      height: 100px; }
+      height: 100px;
+      position: relative; }
+      body #wrapper #header #top_msg {
+        position: absolute;
+        top: 60px;
+        right: 0; }
       body #wrapper #header p {
         margin: 0;
-        color: #4c335a;
+        color: #b7a75c;
         font-size: 85%; }
     body #wrapper #footer {
       width: 100%;
@@ -80,11 +85,12 @@ body {
         width: 300px; }
         body #wrapper #container #meegen_area #sub #recent_meegen {
           font-size: 80%;
+          color: #392e32;
           padding: 10px;
           margin: 10px 0;
           line-height: 1.5em;
           list-style: disc;
-          background-color: #B7A75C; }
+          background-color: #b7a75c; }
           body #wrapper #container #meegen_area #sub #recent_meegen h3 {
             margin: 5px;
             font-size: 100%;
@@ -99,6 +105,11 @@ body {
         float: left;
         width: 630px;
         padding-right: 10px; }
+        body #wrapper #container #meegen_area #popular_meegen_area h3 {
+          margin: 5px 10px;
+          padding: 0;
+          font-size: 100%;
+          font-weight: bold; }
         body #wrapper #container #meegen_area #popular_meegen_area .meegen_list li {
           padding: 5px 0;
           font-size: 100%;
@@ -132,10 +143,32 @@ body {
               body #wrapper #container #meegen_area #popular_meegen_area .meegen_list li p.content a {
                 color: #fff;
                 text-decoration: none; }
-            body #wrapper #container #meegen_area #popular_meegen_area .meegen_list li p.meegen_info {
-              text-align: right;
-              font-size: 80%; }
-            body #wrapper #container #meegen_area #popular_meegen_area .meegen_list li p.ctrl_panel {
+          body #wrapper #container #meegen_area #popular_meegen_area .meegen_list li .meegen_info {
+            text-align: right;
+            font-size: 80%; }
+            body #wrapper #container #meegen_area #popular_meegen_area .meegen_list li .meegen_info ul li {
+              list-style-type: none;
+              padding: 0;
+              margin: 0; }
+            body #wrapper #container #meegen_area #popular_meegen_area .meegen_list li .meegen_info .crumbs {
+              border: 1px solid #dedede;
+              height: 2.2em;
+              background-color: #fff; }
+              body #wrapper #container #meegen_area #popular_meegen_area .meegen_list li .meegen_info .crumbs li {
+                float: left;
+                line-height: 2.2em;
+                padding-left: .75em;
+                color: #777; }
+                body #wrapper #container #meegen_area #popular_meegen_area .meegen_list li .meegen_info .crumbs li a {
+                  display: block;
+                  padding: 0 15px 0 0;
+                  background: url(/images/crumbs.gif) no-repeat right center; }
+                  body #wrapper #container #meegen_area #popular_meegen_area .meegen_list li .meegen_info .crumbs li a:link, body #wrapper #container #meegen_area #popular_meegen_area .meegen_list li .meegen_info .crumbs li a:visited {
+                    text-decoration: none;
+                    color: #777; }
+                  body #wrapper #container #meegen_area #popular_meegen_area .meegen_list li .meegen_info .crumbs li a:hover, body #wrapper #container #meegen_area #popular_meegen_area .meegen_list li .meegen_info .crumbs li a:focus {
+                    color: #dd2c0d; }
+            body #wrapper #container #meegen_area #popular_meegen_area .meegen_list li .meegen_info.ctrl_panel {
               display: none; }
 
 #meegen_new {
@@ -187,8 +220,8 @@ body {
   #meegen_show #meegen_name {
     clear: both; }
   #meegen_show h1 {
-    font-size: 130%;
-    color: #000; }
+    font-size: 100%;
+    color: #392e32; }
   #meegen_show #meegen_tags {
     font-size: 90%; }
 
