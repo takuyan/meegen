@@ -21,7 +21,7 @@
               <% end -%>
             </p>
             <div class="meegen_info">
-              <ul class="crumbs">
+              <ul class="crumbs ui-corner-all">
                 <% meegen.tags.each do |tag| -%>
                   <li>
                     <%= link_to tag.name, tag_path(:id => tag.id, :name => tag.name) -%>
@@ -45,18 +45,33 @@
   </div>
 
   <div id="sub">
-    <div id="recent_meegen" class="corner_round clearfix">
+    <div id="recent_meegen" class="corner_round clearfix sub_item">
       <h3>
         最新の名言
       </h3>
       <ul>
         <% @new_meegens.each do |m| -%>
           <li>
-            <%= m.name %>
+            <% if m.name.split(//u).size > 100 -%>
+              <%= link_to m.name.split(//u)[0..100].to_s + "...", m_path(:id => m.id, :name => m.name.split(//u).to_s[0..100]) %>
+            <% else -%>
+              <%= link_to m.name, m_path(:id => m.id, :name => m.name) %>
+            <% end -%>
           </li>
         <% end -%>
       </ul>
     </div>
+
+    <div id="recent_meegen" class="corner_round clearfix sub_item">
+      <h3>
+        編集部より
+      </h3>
+      <div>
+      </div>
+    </div>
+
+
+
   </div>
 </div>
 

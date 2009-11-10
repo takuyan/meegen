@@ -83,24 +83,6 @@ body {
       body #wrapper #container #meegen_area #sub {
         float: right;
         width: 300px; }
-        body #wrapper #container #meegen_area #sub #recent_meegen {
-          font-size: 80%;
-          color: #392e32;
-          padding: 10px;
-          margin: 10px 0;
-          line-height: 1.5em;
-          list-style: disc;
-          background-color: #b7a75c; }
-          body #wrapper #container #meegen_area #sub #recent_meegen h3 {
-            margin: 5px;
-            font-size: 100%;
-            font-weight: bold; }
-          body #wrapper #container #meegen_area #sub #recent_meegen ul {
-            margin: 0;
-            padding: 0;
-            padding-left: 10px; }
-            body #wrapper #container #meegen_area #sub #recent_meegen ul li {
-              list-style-type: disc; }
       body #wrapper #container #meegen_area #popular_meegen_area {
         float: left;
         width: 630px;
@@ -136,10 +118,7 @@ body {
             margin: 5px;
             padding-bottom: 5px; }
             body #wrapper #container #meegen_area #popular_meegen_area .meegen_list li p.content {
-              font-size: 108%;
-              border-bottom-width: 1px;
-              border-bottom-style: dotted;
-              border-bottom-color: #ccc; }
+              font-size: 108%; }
               body #wrapper #container #meegen_area #popular_meegen_area .meegen_list li p.content a {
                 color: #fff;
                 text-decoration: none; }
@@ -200,9 +179,10 @@ body {
       margin-bottom: 5px;
       text-align: left; }
       #meegen_new #new_main p #meegen_name {
-        width: 100%;
-        height: 200px;
-        font-size: 150%;
+        width: 700px;
+        height: 130px;
+        font-size: 100%;
+        padding: 10px;
         border-width: 0;
         border-style: none;
         border-color: none; }
@@ -247,3 +227,25 @@ body {
     list-style-type: disc; }
     #tag_show ul li a {
       color: #fff; }
+
+.sub_item {
+  font-size: 80%;
+  color: #392e32;
+  padding: 10px;
+  margin: 10px 0;
+  line-height: 1.5em;
+  list-style: disc;
+  background-color: #fff; }
+  .sub_item h3 {
+    margin: 5px;
+    font-size: 100%;
+    font-weight: bold; }
+  .sub_item ul {
+    margin: 0;
+    padding: 0;
+    padding-left: 10px; }
+    .sub_item ul li {
+      list-style-type: disc; }
+      .sub_item ul li a {
+        color: #392e32;
+        text-decoration: none; }

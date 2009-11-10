@@ -45,18 +45,34 @@
   </div>
 
   <div id="sub">
-    <div id="recent_meegen" class="corner_round clearfix">
+    <div id="recent_meegen" class="corner_round clearfix sub_item">
       <h3>
         最新の名言
       </h3>
       <ul>
         <% @new_meegens.each do |m| -%>
           <li>
-            <%= m.name %>
+            <% if m.name.split(//u).size > 100 -%>
+              <%= link_to m.name.split(//u)[0..100].to_s + "...", m_path(:id => m.id, :name => m.name.split(//u).to_s[0..100]) %>
+            <% else -%>
+              <%= link_to m.name, m_path(:id => m.id, :name => m.name) %>
+            <% end -%>
           </li>
         <% end -%>
       </ul>
     </div>
+
+    <div id="recent_meegen" class="corner_round clearfix sub_item">
+      <h3>
+        編集部より
+      </h3>
+      <div>
+        名言に対して自由にタグをつけてね。また、名言をクリックしてもらえたら、同じような名言をオススメするよ。
+      </div>
+    </div>
+
+
+
   </div>
 </div>
 

@@ -5,7 +5,7 @@ class MeegensController < ApplicationController
   # GET /meegens
   # GET /meegens.xml
   def index
-    @new_meegens = Meegen.all(:order => "created_at desc")
+    @new_meegens = Meegen.all(:order => "created_at desc", :limit => 10)
     @popular_meegens = Meegen.all(:order => "fav desc")
     @tags = Meegen.tag_counts
 
@@ -46,19 +46,20 @@ class MeegensController < ApplicationController
   # POST /meegens.xml
   def create
     @meegen = Meegen.new(params[:meegen])
-    @keywords =
-      Keyword.find_all_by_name(params[:keyword_name])
-    if @keywords.size > 0
-      @meegen.tag_list.add @keywords.first.name
-    else
-      @keyword = Keyword.new(:name => params[:keyword_name])
-      @keyword.save
-      @meegen.tag_list.add @keyword.name
-    end
+    # @keywords =
+      # Keyword.find_all_by_name(params[:keyword_name])
+    # if @keywords.size > 0
+      # @meegen.tag_list.add @keywords.first.name
+    # else
+      # @keyword = Keyword.new(:name => params[:keyword_name])
+      # @keyword.save
+      # @meegen.tag_list.add @keyword.name
+    # end
 
     respond_to do |format|
       if @meegen.save
-        @keyword.save
+        @meegen.tag_list.add params[:tag_name]
+        # @keyword.save
         flash[:notice] = 'Meegen was successfully created.'
         format.html { redirect_to(@meegen) }
         format.xml  { render :xml => @meegen, :status => :created, :location => @meegen }
