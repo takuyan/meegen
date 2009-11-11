@@ -163,7 +163,7 @@ body
                 &.content
                   font:
                     size: 108%
-                  border-bottom: 
+                  //border-bottom: 
                     width: 1px
                     style: dotted
                     color: #ccc
@@ -191,7 +191,8 @@ body
                   li
                     float: left
                     line-height: 2.2em
-                    padding-left: .75em
+                    padding:
+                      left: .75em
                     color: #777
 
                     a
@@ -205,6 +206,9 @@ body
 
                       &:hover, &:focus
                         color: #dd2c0d
+
+                    img
+                      float: right
                         
 
                 &.ctrl_panel

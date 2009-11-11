@@ -22,12 +22,24 @@
             </p>
             <div class="meegen_info">
               <ul class="crumbs ui-corner-all">
+                <li>
+                <%= image_tag "/images/blossom/png/24x24/add_item.png", :class => "show_add_tag" %>
+                </li>
                 <% meegen.tags.each do |tag| -%>
                   <li>
-                    <%= link_to tag.name, tag_path(:id => tag.id, :name => tag.name) -%>
+                    <% link_to tag_path(:id => tag.id, :name => tag.name) do -%>
+                      <%= tag.name %>
+                    <% end -%>
                   </li>
                 <% end -%>
               </ul>
+
+              <% form_tag :action => :add_tag do -%>
+                <%= text_field_tag :tag, "", :id => "tag_#{meegen.id}", :class => "tag_name_field" %>
+                <%= hidden_field_tag "meegen_id", meegen.id, :id => "meegen_id_#{meegen.id}" %>
+                <%= submit_tag "タグ追加" %>
+              <% end -%>
+
               <%=h meegen.created_at.strftime("%Y/%m/%d %H:%M") %>
             </div>
             <% if false -%>
@@ -62,11 +74,12 @@
       </ul>
     </div>
 
-    <div id="recent_meegen" class="corner_round clearfix sub_item">
+    <div id="admin_msg" class="corner_round clearfix sub_item">
       <h3>
         編集部より
       </h3>
       <div>
+        名言に対して自由にタグをつけてね。また、名言をクリックしてもらえたら、同じような名言をオススメするよ。
       </div>
     </div>
 

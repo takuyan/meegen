@@ -7,11 +7,12 @@
     <% form_for(@meegen) do |f| %>
       <%= f.error_messages %>
 
+      <p>
       <%= f.text_area :name, :size => "40x5", :class => "ui-corner-all" %>
       </p>
       <p>
-      <label for="keyword_name">分類(タグ)：</label>
-        <%= text_field_tag :keyword_name %>
+      <label for="tag">分類(タグ)</label>
+        <%= text_field_tag :tag %>
       </p>
       <p>
       <%= f.submit '', :class => "button ui-corner-all" %>

@@ -4,6 +4,9 @@ class Meegen < ActiveRecord::Base
   has_many :comments,
     :dependent => :destroy
 
+  has_many :next_logs,
+    :dependent => :destroy
+
   validates_presence_of :name,
     :message => "entry name"
 
@@ -21,3 +24,4 @@ class Meegen < ActiveRecord::Base
     self.tags
   end
 end
+

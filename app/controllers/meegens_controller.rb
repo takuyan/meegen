@@ -19,6 +19,10 @@ class MeegensController < ApplicationController
   # GET /meegens/1.xml
   def show
     @meegen = Meegen.find(params[:id])
+    if false # next meegen relationship
+      before_meegen = Meegen.find 1
+      before_meegen.next_logs << @meegen
+    end
 
     respond_to do |format|
       format.html # show.html.erb
@@ -46,22 +50,12 @@ class MeegensController < ApplicationController
   # POST /meegens.xml
   def create
     @meegen = Meegen.new(params[:meegen])
-    # @keywords =
-      # Keyword.find_all_by_name(params[:keyword_name])
-    # if @keywords.size > 0
-      # @meegen.tag_list.add @keywords.first.name
-    # else
-      # @keyword = Keyword.new(:name => params[:keyword_name])
-      # @keyword.save
-      # @meegen.tag_list.add @keyword.name
-    # end
-
+    @meegen.tag_list = params[:tag]
+    
     respond_to do |format|
       if @meegen.save
-        @meegen.tag_list.add params[:tag_name]
-        # @keyword.save
         flash[:notice] = 'Meegen was successfully created.'
-        format.html { redirect_to(@meegen) }
+        format.html { redirect_to(m_path :id => @meegen.id, :name => @meegen.name.split(//u)[0..100]) }
         format.xml  { render :xml => @meegen, :status => :created, :location => @meegen }
       else
         format.html { render :action => "new" }

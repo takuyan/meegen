@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+
+one:
+
+  meegen_id: 1
+
+  show_count: 1
+
+
+two:
+
+  meegen_id: 1
+
+  show_count: 1
+
+

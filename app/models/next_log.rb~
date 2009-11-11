@@ -1,0 +1,3 @@
+class NextLog < ActiveRecord::Base
+
+end
