@@ -19,7 +19,7 @@ class MeegensController < ApplicationController
   # GET /meegens/1.xml
   def show
     @meegen = Meegen.find(params[:id])
-    if false
+    if false # next meegen relationship
       before_meegen = Meegen.find 1
       before_meegen.next_logs << @meegen
     end

@@ -1,5 +1,5 @@
 <% content_for :title do -%>
-  <%= "#{meegen.name} - " -%>
+  <%= "#{@meegen.name} - " -%>
 <% end -%>
 
 <div id="meegen_show" class="corner_round">
@@ -14,7 +14,7 @@
     分類： 
     <% @meegen.tags.each do |tag| -%>
       <span>
-        <%= link_to tag.name, url_for(tag) -%>
+        <%= link_to tag.name, tag_path(tag) -%>
         <% link_to :action => :remove_tag, :id => @meegen.id, :tag => tag.name do -%>
           [x]
         <% end -%>

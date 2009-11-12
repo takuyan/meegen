@@ -23,22 +23,25 @@
             <div class="meegen_info">
               <ul class="crumbs ui-corner-all">
                 <li>
-                <%= image_tag "/images/blossom/png/24x24/add_item.png", :class => "show_add_tag" %>
+                <%= image_tag "/images/blossom/png/24x24/add_item.png", :class => "show_add_tag", :id => "m#{meegen.id}", :title => "タグを追加する！" %>
                 </li>
                 <% meegen.tags.each do |tag| -%>
                   <li>
-                    <% link_to tag_path(:id => tag.id, :name => tag.name) do -%>
+                  <% link_to tag_path(:name => tag.name) do -%>
                       <%= tag.name %>
                     <% end -%>
                   </li>
                 <% end -%>
               </ul>
 
-              <% form_tag :action => :add_tag do -%>
-                <%= text_field_tag :tag, "", :id => "tag_#{meegen.id}", :class => "tag_name_field" %>
-                <%= hidden_field_tag "meegen_id", meegen.id, :id => "meegen_id_#{meegen.id}" %>
-                <%= submit_tag "タグ追加" %>
-              <% end -%>
+              <div id="add_tag_<%= meegen.id %>" class="add_tag_form">
+
+                <% form_tag :action => :add_tag do -%>
+                  <%= text_field_tag :tag, "", :id => "tag_#{meegen.id}", :class => "tag_name_field ui-corner-all" %>
+                  <%= hidden_field_tag "meegen_id", meegen.id, :id => "meegen_id_#{meegen.id}" %>
+                  <%= submit_tag "タグ追加", :class => "tag_submit" %>
+                <% end -%>
+              </div>
 
               <%=h meegen.created_at.strftime("%Y/%m/%d %H:%M") %>
             </div>

@@ -1,8 +1,8 @@
 <% content_for :title do -%>
-  <%= "#{@tag.name} - " %>
+  <%= "#{@tag} - " %>
 <% end -%>
 <div id="tag_show">
-  <h1>É^ÉOÅF<%= @tag %></h1>
+  <h1>„Çø„Ç∞Ôºö<%= @tag %></h1>
 
   <% if @meegens -%>
     <ul>

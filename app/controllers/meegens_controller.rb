@@ -55,7 +55,7 @@ class MeegensController < ApplicationController
     respond_to do |format|
       if @meegen.save
         flash[:notice] = 'Meegen was successfully created.'
-        format.html { redirect_to(m_path :id => @meegen.id, :name => @meegen.name.split(//u)[0..100]) }
+        format.html { redirect_to(m_path :id => @meegen.id, :name => @meegen.name.split(//u)[0..100].to_s) }
         format.xml  { render :xml => @meegen, :status => :created, :location => @meegen }
       else
         format.html { render :action => "new" }

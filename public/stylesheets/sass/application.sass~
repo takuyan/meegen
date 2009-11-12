@@ -1,14 +1,14 @@
 @charset "UTF-8"
 
 // fimale
-//!color1 = #460a0a
-//!color2 = #DD4830 
-//!color3 = #b7a75c
+!color1 = #460a0a
+!color2 = #DD4830 
+!color3 = #b7a75c
 
 // male
-!color1 = #392e32 
-!color2 = #4c335a 
-!color3 = #b7a75c
+//!color1 = #392e32 
+//!color2 = #4c335a 
+//!color3 = #b7a75c
 
 a
   color: #999
@@ -177,6 +177,18 @@ body
                 font:
                   size: 80%
 
+                .add_tag_form
+                  display: none
+
+                  .tag_name_field
+                    width: 50%
+                    border: none
+                    padding: 2px
+
+                  .tag_submit
+                    border:
+                      width: 0
+                
                 ul li
                   list-style-type: none
                   padding: 0
@@ -209,6 +221,7 @@ body
 
                     img
                       float: right
+                      cursor: pointer
                         
 
                 &.ctrl_panel
